@@ -11,11 +11,12 @@ alias nvim-lazy="NVIM_APPNAME=nvim-lazy nvim"
 alias nvim-kick="NVIM_APPNAME=nvim-kickstart nvim"
 alias nvim-chad="NVIM_APPNAME=nvim-nvchad nvim"
 alias nvim-astro="NVIM_APPNAME=nvim-astro nvim"
+alias nvim-primeagen="NVIM_APPNAME=nvim-primeagen nvim"
 alias nvim-lizhi="NVIM_APPNAME=nvim-lizhi nvim"
 
 function nvims() {
-  itemNames=("default" "Kickstart" "LazyVim" "NvChad" "AstroNvim" "lizhi")
-  itemAlias=("default" "nvim-kickstart" "nvim-lazy" "nvim-nvchad" "nvim-astro" "nvim-lizhi")
+  itemNames=("default" "Kickstart" "LazyVim" "NvChad" "AstroNvim" "ThePrimeagen" "lizhi")
+  itemAlias=("default" "nvim-kickstart" "nvim-lazy" "nvim-nvchad" "nvim-astro" "nvim-primeagen" "nvim-lizhi")
   config=$(printf "%s\n" "${itemNames[@]}" | fzf --prompt=" Neovim Config  " --height=50% --layout=reverse --border --exit-0)
 
   if [[ -z $config ]]; then
