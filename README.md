@@ -6,7 +6,7 @@
 - 状态栏 [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
 - [z.lua](https://github.com/skywind3000/z.lua)
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
-- [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting.git)
 
 ### 安装依赖
 成功完成配置需要用到一下软件依赖:
@@ -20,11 +20,11 @@
 如果修改需要修改一下文件 `.zshrc` 的设置 `ZSH_CUSTOM` 
 
 ```
-git clone --depth 1 --recurse-submodules https://github.com/liiil825/zsh-config.git ~/.config/zsh
+git clone --depth 1 https://github.com/liiil825/zsh-config.git ~/.config/zsh
 cd ~/.config/zsh
 git submodule update --init --depth=1 --recursive
 mv ~/.zshrc ~/.zshrc.backup # (可选)备份原来配置
-ln -sf ~/.config/.zshrc ~/.zshrc
+ln -sf ~/.config/zsh/.zshrc ~/.zshrc
 ```
 
 ### 建议安装
