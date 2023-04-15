@@ -6,12 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 export ZSH="$HOME/.oh-my-zsh"
-
-if [ "$OSTYPE" = linux-gnu ]; then
-    ZSH_CUSTOM=/srv/zsh-custom
-else
-    ZSH_CUSTOM=$HOME/.config/zsh
-fi
+ZSH_CUSTOM=~/.config/zsh # load.zsh 使用路径
 
 plugins=(
   brew

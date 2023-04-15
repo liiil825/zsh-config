@@ -2,7 +2,5 @@ python.zsh
 work.zsh
 color.zsh
 homebrew.zsh
-nvm.zsh
-path.zsh
-pure.zsh
 theme.zsh
+chatgpt-api-key.zsh
