@@ -1,6 +1,7 @@
-if [[ $(user) == "Darwin" ]]; then
+if [[ $(uname) == "Darwin" ]]; then
   export ZPLUG_HOME=/usr/local/opt/zplug
-elif [[ $(user) == "Linux" ]]; then
+elif [[ $(uname) == "Linux" ]]; then
+  return
   export ZPLUG_HOME=~/.config/zplugin/
 fi
 source $ZPLUG_HOME/init.zsh
