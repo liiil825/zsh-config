@@ -1,4 +1,4 @@
-if [ "$OSTYPE" = "Linux" ]; then
+if [ "$(uname)" = "Linux" ]; then
   return
 fi
 

@@ -8,13 +8,12 @@ fi
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_CUSTOM=~/.config/zsh # load.zsh 使用路径
 
-OS=$(uname)
 plugins=(
   git
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
-if [[ "$OS" == "Darwin" ]]; then
+if [[ $(uname) == "Darwin" ]]; then
   plugins+=(brew)
 fi
 

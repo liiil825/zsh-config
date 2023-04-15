@@ -1,9 +1,16 @@
-[submodule "zsh-custom/plugins/zsh-autosuggestions"]
-	path = zsh-custom/plugins/zsh-autosuggestions
+[submodule "plugins/zsh-autosuggestions"]
+	path = plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
-[submodule "zsh-custom/plugins/zsh-syntax-highlighting"]
-	path = zsh-custom/plugins/zsh-syntax-highlighting
+  shallow = true
+[submodule "plugins/zsh-syntax-highlighting"]
+	path = plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "zsh-custom/plugins/z.lua"]
-	path = zsh-custom/plugins/z.lua
+  shallow = true
+[submodule "plugins/z.lua"]
+	path = plugins/z.lua
 	url = https://github.com/skywind3000/z.lua.git
+  shallow = true
+[submodule "themes/powerlevel10k"]
+	path = themes/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
+  shallow = true
