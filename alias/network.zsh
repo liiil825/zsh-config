@@ -1,14 +1,18 @@
-export all_proxy=socks5://127.0.0.1:1086
+PROXYHOST=127.0.0.1
+PROXYPORT=1080
+
+export all_proxy=socks5://$PROXYHOST:$PROXYPORT
 setproxy () {
-  export all_proxy=socks5://127.0.0.1:1086
-  export https_proxy=http://127.0.0.1:1087
-  export http_proxy=http://127.0.0.1:1087
+  export all_proxy=socks5://$PROXYHOST:$PROXYPORT
+  # export all_proxy=socks5h://$PROXYHOST:$PROXYPORT
+  # export http_proxy=http://$PROXYHOST:$PROXYPORT
+  # export https_proxy=https://$PROXYHOST:$PROXYPORT
 }
 
 unsetproxy () {
-  unset all_proxy
   unset http_proxy
   unset https_proxy
+  unset all_proxy
 }
 
 mylocalip () {

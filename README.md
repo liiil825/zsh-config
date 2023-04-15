@@ -12,13 +12,16 @@
 成功完成配置需要用到一下软件依赖:
 - [oh my zsh](https://github.com/ohmyzsh/ohmyzsh)
 - 字体 [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts)
+- lua
 
 ### 安装
 安装默认地址为 `~/.config/zsh`
 如果修改需要修改一下文件 `.zshrc` 的设置 `ZSH_CUSTOM` 
 
 ```
-git clone --recurse-submodules https://github.com/liiil825/zsh-config.git ~/.config/zsh
+git clone --depth 1 --recurse-submodules https://github.com/liiil825/zsh-config.git ~/.config/zsh
+cd ~/.config/zsh
+git submodule update --init --depth=1 --recursive
 mv ~/.zshrc ~/.zshrc.backup # (可选)备份原来配置
 ln -sf ~/.config/.zshrc ~/.zshrc
 ```
