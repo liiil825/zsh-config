@@ -17,15 +17,4 @@ if [[ $(uname) == "Darwin" ]]; then
   plugins+=(brew)
 fi
 
-# source ~/.oh-my-zsh/plugins/git/git.plugin.zsh
-# . /usr/local/z/z.sh
-
 source $ZSH/oh-my-zsh.sh
-
-# pnpm
-export PNPM_HOME="/Users/lizhi/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
