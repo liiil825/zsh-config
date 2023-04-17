@@ -13,7 +13,7 @@
 - [oh my zsh](https://github.com/ohmyzsh/ohmyzsh)
 - 字体 [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts)
 - lua
-- [可选] zplugin (如果不需要则删除文件即可 `config/z.zsh` )
+- [zplug](https://github.com/zplug/zplug) 
 
 ### 安装
 安装默认地址为 `~/.config/zsh`
