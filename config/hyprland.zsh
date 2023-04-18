@@ -1,6 +1,9 @@
+if [ "$(uname)" = "Darwin" ]; then
+  return
+fi
+
 # 启动 wayland 桌面前设置一些环境变量
- function set_wayland_env
- {
+set_wayland_env() {
   cd ${HOME}
   # 设置语言环境为中文
   export LANG=zh_CN.UTF-8
@@ -22,8 +25,7 @@
  }
 
  # 命令行输入这个命令启动hyprland,可以自定义
- function start_hyprland
- {
+ start_hyprland () {
   set_wayland_env
 
   export XDG_SESSION_TYPE=wayland
@@ -31,5 +33,4 @@
   export XDG_CURRENT_DESKTOP=Hyprland
   # 启动 Hyprland程序
   exec Hyprland
-
  }
