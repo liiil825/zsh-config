@@ -1,3 +1,6 @@
+if [[ $(uname -n) == *"-opencloudos" ]]; then
+    return
+fi
 PROXYHOST=127.0.0.1
 PROXYPORT=1080
 

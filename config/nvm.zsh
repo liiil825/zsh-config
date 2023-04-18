@@ -1,3 +1,7 @@
+if [[ $(uname -n) == *"-opencloudos" ]]; then
+    return
+fi
+
 export NVM_DIR="$HOME/.nvm"
 if [[ ! -a ~/.zsh-async ]]; then
     git clone git@github.com:mafredri/zsh-async.git ~/.zsh-async

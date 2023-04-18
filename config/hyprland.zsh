@@ -1,7 +1,6 @@
-if [ "$(uname)" = "Darwin" ]; then
-  return
+if [[ "$(uname -n)" != "archlinux" ]]; then
+    return
 fi
-
 # 启动 wayland 桌面前设置一些环境变量
 set_wayland_env() {
   cd ${HOME}
@@ -21,7 +20,6 @@ set_wayland_env() {
   export _JAVA_AWT_WM_NONEREPARENTING=1
   # GTK后端为 wayland和x11,优先wayland
   export GDK_BACKEND="wayland,x11"
-
  }
 
  # 命令行输入这个命令启动hyprland,可以自定义

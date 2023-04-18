@@ -1,4 +1,8 @@
 #!/bin/zsh
+if [[ $(uname -n) == *"-opencloudos" ]]; then
+    return
+fi
+
 alias vim="nvim"
 alias vi="nvim"
 alias v="nvim"
