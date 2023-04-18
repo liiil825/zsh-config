@@ -1,9 +1,8 @@
 #!/bin/zsh
-
-alias ra="ranger"
 alias vim="nvim"
 alias vi="nvim"
 alias v="nvim"
+alias ra="ranger"
 
 export VISUAL=nvim
 export EDITOR=$VISUAL
