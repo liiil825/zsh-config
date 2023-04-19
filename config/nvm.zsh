@@ -2,21 +2,20 @@ if [[ $(uname -n) == *"-opencloudos" ]]; then
     return
 fi
 
-export NVM_DIR="$HOME/.nvm"
+if [[ $(uname) == "Linux" ]]; then
+    export NVM_DIR=$HOME/.nvm
+elif [[ $(uname) == "Darwin" ]]; then
+    export NVM_DIR=/usr/local/opt/nvm
+fi
+
 if [[ ! -a ~/.zsh-async ]]; then
     git clone git@github.com:mafredri/zsh-async.git ~/.zsh-async
 fi
 source ~/.zsh-async/async.zsh
 
 function load_nvm() {
-    # [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-    # [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
-    [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-    [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
-
-    if [ "$OSTYPE" = linux-gnu ]; then
-      return
-    fi
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+    [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
 
     autoload -U add-zsh-hook
     add-zsh-hook chpwd load-nvmrc

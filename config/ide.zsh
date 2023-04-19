@@ -1,25 +1,35 @@
 #!/bin/zsh
+alias ra="ranger"
 if [[ $(uname -n) == *"-opencloudos" ]]; then
-    return
+  return
+fi
+
+if [[ $(uname) == "Linux" ]]; then
+  # linux 下设置错误的 TERM
+  # 会在命令行执行后，下一行会多显示一次
+  # 修复 archlinux 下的 tmux 256-color 显示错误
+  if [[ $TERM != "tmux-256color" ]]; then
+    alias tmux="TERM=tmux-256color tmux -2" 
+  fi
+elif [[ $(uname) == "Darwin" ]]; then
+  TERM="screen-256color"
 fi
 
 alias vim="nvim"
 alias vi="nvim"
 alias v="nvim"
-alias ra="ranger"
 
 export VISUAL=nvim
 export EDITOR=$VISUAL
 
-alias nvim-lazy="NVIM_APPNAME=nvim-lazy nvim"
-alias nvim-kick="NVIM_APPNAME=nvim-kickstart nvim"
-alias nvim-chad="NVIM_APPNAME=nvim-nvchad nvim"
 alias nvim-astro="NVIM_APPNAME=nvim-astro nvim"
+alias nvim-lazy="NVIM_APPNAME=nvim-lazy nvim"
+alias nvim-chad="NVIM_APPNAME=nvim-nvchad nvim"
 alias nvim-lunar="NVIM_APPNAME=nvim-lunar nvim"
 
 function nvims() {
-  itemNames=("default" "Kickstart" "LazyVim" "NvChad" "AstroNvim" "LunarNvim")
-  itemAlias=("default" "nvim-kickstart" "nvim-lazy" "nvim-nvchad" "nvim-astro" "nvim-lunar")
+  itemNames=("default" "LazyVim" "NvChad" "AstroNvim" "LunarNvim")
+  itemAlias=("default" "nvim-lazy" "nvim-nvchad" "nvim-astro" "nvim-lunar")
   config=$(printf "%s\n" "${itemNames[@]}" | fzf --prompt=" Neovim Config  " --height=50% --layout=reverse --border --exit-0)
 
   if [[ -z $config ]]; then
@@ -36,6 +46,8 @@ function nvims() {
       fi
     done
   fi
+
+  echo $config
 
   NVIM_APPNAME=$config nvim $@
 }
