@@ -2,11 +2,7 @@ if [[ $(uname -n) == *"-opencloudos" ]]; then
     return
 fi
 
-if [[ $(uname) == "Linux" ]]; then
-    export NVM_DIR=$HOME/.nvm
-elif [[ $(uname) == "Darwin" ]]; then
-    export NVM_DIR=/usr/local/opt/nvm
-fi
+export NVM_DIR=$HOME/.nvm
 
 if [[ ! -a ~/.zsh-async ]]; then
     git clone git@github.com:mafredri/zsh-async.git ~/.zsh-async

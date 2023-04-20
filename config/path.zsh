@@ -1,6 +1,8 @@
 if [[ "$(uname)" == "Linux" ]]; then
   return
 fi
+export UID=$(id -u)
+export GID=$(id -g)
 
 export PATH=$PATH:/bin:/usr/sbin:/sbin
 export PATH=$PATH:$HOME/.yarn/bin
