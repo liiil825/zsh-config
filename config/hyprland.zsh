@@ -4,8 +4,9 @@ fi
 # 启动 wayland 桌面前设置一些环境变量
 set_wayland_env() {
   cd ${HOME}
-  # 设置语言环境为中文
-  export LANG=zh_CN.UTF-8
+  # 设置语言环境
+  export LANG=en_US.UTF-8
+  # export LANG=zh_CN.UTF-8
   # 解决QT程序缩放问题
   export QT_AUTO_SCREEN_SCALE_FACTOR=1
   # QT使用wayland和gtk
@@ -20,10 +21,10 @@ set_wayland_env() {
   export _JAVA_AWT_WM_NONEREPARENTING=1
   # GTK后端为 wayland和x11,优先wayland
   export GDK_BACKEND="wayland,x11"
- }
+}
 
  # 命令行输入这个命令启动hyprland,可以自定义
- start_hyprland () {
+start_hyprland () {
   set_wayland_env
 
   export XDG_SESSION_TYPE=wayland
@@ -31,4 +32,8 @@ set_wayland_env() {
   export XDG_CURRENT_DESKTOP=Hyprland
   # 启动 Hyprland程序
   exec Hyprland
- }
+}
+
+if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+  start_hyprland
+fi

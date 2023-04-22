@@ -4,6 +4,14 @@ fi
 
 export NVM_DIR=$HOME/.nvm
 
+# pnpm
+export PNPM_HOME="$HOME/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
 if [[ ! -a ~/.zsh-async ]]; then
     git clone git@github.com:mafredri/zsh-async.git ~/.zsh-async
 fi
@@ -38,4 +46,3 @@ load-nvmrc() {
         nvm use default
     fi
 }
-
