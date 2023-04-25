@@ -51,3 +51,11 @@ function nvims() {
 
   NVIM_APPNAME=$config nvim $@
 }
+
+function nvim_change() {
+  alias nvim="NVIM_APPNAME=nvim-$1 nvim"
+}
+
+function nvim_clean() {
+  unalias nvim
+}
