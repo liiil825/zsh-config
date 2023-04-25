@@ -9,9 +9,9 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_CUSTOM=~/.config/zsh # load.zsh 使用路径
 
 plugins=(
-  z.lua
   git
   zsh-autosuggestions
+  zsh-history-substring-search
   zsh-syntax-highlighting
 )
 if [[ $(uname) == "Darwin" ]]; then
