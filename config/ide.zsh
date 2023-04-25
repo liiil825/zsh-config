@@ -1,5 +1,4 @@
-#!/bin/zsh
-alias ra="ranger"
+#! /usr/bin/env zsh
 if [[ $(uname -n) == *"-opencloudos" ]]; then
   return
 fi

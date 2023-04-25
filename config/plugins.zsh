@@ -1,10 +1,11 @@
-# If command execution time above min. time, plugins will not output time.
-ZSH_COMMAND_TIME_MIN_SECONDS=3
+source $ZSH_CUSTOM/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 
-# Message to display (set to "" for disable).
-ZSH_COMMAND_TIME_MSG="Execution time: %s sec"
+# Bind up/down arrow keys to navigate through your history
+bindkey '\e[A' directory-history-search-backward
+bindkey '\e[B' directory-history-search-forward
 
-# Message color.
-ZSH_COMMAND_TIME_COLOR="cyan"
+# Bind CTRL+k and CTRL+j to substring search
+bindkey '^j' history-substring-search-up
+bindkey '^k' history-substring-search-down
 
 eval "$(lua $ZSH_CUSTOM/plugins/z.lua/z.lua --init echo enhanced zsh)"

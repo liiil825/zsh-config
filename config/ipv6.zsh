@@ -1,4 +1,5 @@
-#!/bin/bash
+#! /usr/bin/env zsh
+
 if [[ $(uname -n) == *"-opencloudos" ]]; then
   return
 fi
@@ -25,6 +26,7 @@ linux_ipv6_toggle_disable () {
     export DISABLE_IPV6=0
   fi
   sudo sysctl -p
+  sudo systemctl restart NetworkManager.service
 }
 
 macos_ipv6_toggle_disable () {
