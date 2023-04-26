@@ -1,5 +1,6 @@
 #! /usr/bin/env zsh
 if [[ $(uname -n) == *"-opencloudos" ]]; then
+  TERM="xterm-256color"
   return
 fi
 
