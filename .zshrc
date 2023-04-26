@@ -10,9 +10,6 @@ ZSH_CUSTOM=~/.config/zsh # load.zsh 使用路径
 
 plugins=(
   git
-  zsh-autosuggestions
-  zsh-history-substring-search
-  zsh-syntax-highlighting
 )
 if [[ $(uname) == "Darwin" ]]; then
   plugins+=(brew)

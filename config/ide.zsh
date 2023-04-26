@@ -17,6 +17,7 @@ fi
 alias vim="nvim"
 alias vi="nvim"
 alias v="nvim"
+alias vf='vim $(fd . -t d | fzf --height=40% --layout=reverse)'
 
 export VISUAL=nvim
 export EDITOR=$VISUAL

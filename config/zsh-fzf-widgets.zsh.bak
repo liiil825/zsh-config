@@ -205,7 +205,7 @@ fzf-gitmoji() {
 zle -N fzf-gitmoji
 
 # bindkey '^R' fzf-cdr
-bindkey '^H' fzf-history
+bindkey '\eg' fzf-history
 
 # Use ctrl-t instead of tab key
 export ZSH_FZF_PASTE_KEY=ctrl-t
