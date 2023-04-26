@@ -1,8 +1,4 @@
 #! /usr/bin/env zsh
-if [[ $(uname -n) == *"-opencloudos" ]]; then
-  return
-fi
-
 if [[ $(uname) == "Darwin" ]]; then
   export ZPLUG_HOME=/usr/local/opt/zplug
 elif [[ $(uname) == "Linux" ]]; then
